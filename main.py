@@ -43,6 +43,7 @@ def is_resource_sufficient(order_ingredients):
 
 def process_coins():
     """Returns the total calculated from coins inserted."""
+    print("\nEspresso costs 1.5$,\nLatte costs 2.5$\nCappuccino costs 3.0\n")
     print("Please insert coins.")
     total = int(input("how many quarters?: ")) * 0.25
     total += int(input("how many dimes?: ")) * 0.1
@@ -76,10 +77,9 @@ is_on = True
 while is_on:
     correctInput = False
     choice = input("What would you like? (espresso/latte/cappuccino): ")
-    while choice != "espresso" or "latte" or "cappuccino" or "off":
+    while choice not in ["espresso", "latte", "cappuccino", "off", "report"]:
         print("Incorrect Input, you can also search for 'report' or 'off' ")
         choice = input("What would you like? (espresso/latte/cappuccino): ")
-    print("All drinks cost 2$")
     if choice == "off":
         is_on = False
     elif choice == "report":
