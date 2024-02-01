@@ -74,7 +74,12 @@ def make_coffee(drink_name, order_ingredients):
 is_on = True
 
 while is_on:
+    correctInput = False
     choice = input("What would you like? (espresso/latte/cappuccino): ")
+    while choice != "espresso" or "latte" or "cappuccino" or "off":
+        print("Incorrect Input, you can also search for 'report' or 'off' ")
+        choice = input("What would you like? (espresso/latte/cappuccino): ")
+    print("All drinks cost 2$")
     if choice == "off":
         is_on = False
     elif choice == "report":
